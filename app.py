@@ -34,6 +34,7 @@ verifikasiData = load_json_data("verification.json")
 kecamatanData = load_json_data("kecamatan.json")
 teamData = load_json_data("team.json")
 configData = load_json_data("config.json")
+conclusionData = load_json_data("conclusion.json")
 
 # Page Setting
 st.set_page_config(
@@ -196,6 +197,20 @@ with st.container():
                     if st.button("Eksplorasi Wilayah ➔", key=f"kec_btn_{k}", use_container_width=True):
                         show_modal(d)
 
+
+# --- KESIMPULAN ---
+st.markdown(f"""
+<div style='padding: 0 5%; margin-top: 6rem;'>
+    <h2 class='s-title'>{conclusionData.get('title', 'Kesimpulan')}</h2>
+</div>
+""", unsafe_allow_html=True)
+
+with st.container():
+    st.markdown(f"""
+    <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid var(--border); border-radius: 24px; padding: 4rem; margin: 0 5%; line-height: 1.8; color: #cbd5e1; font-size: 1.1rem;">
+        {conclusionData.get('content', '')}
+    </div>
+    """, unsafe_allow_html=True)
 
 # --- GALLERY ---
 st.markdown("<div style='padding: 6rem 5% 2rem;'><h2 class='s-title'>Bukti Visual Lapangan</h2><p class='s-desc'>Dokumentasi geografis terverifikasi untuk setiap wilayah terdampak.</p></div>", unsafe_allow_html=True)
