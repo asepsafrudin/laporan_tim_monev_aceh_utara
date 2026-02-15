@@ -253,6 +253,18 @@ if metadata:
                         with st.expander("Geo-Metadata"):
                             st.json({"Kec": item.get('kecamatan'), "GPS": item.get('gps')})
 
+# --- PENUTUP ---
+c = configData.get("closing", {})
+if c:
+    st.markdown(f"""
+    <div style='padding: 0 5%; margin-top: 8rem; text-align: center;'>
+        <h2 class='s-title'>{c.get('title', 'Penutup')}</h2>
+        <div style="max-width: 800px; margin: 3rem auto; line-height: 2; color: #94a3b8; font-size: 1.1rem; font-style: italic; font-family: 'Crimson Pro', serif;">
+            "{c.get('content', '')}"
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
 # --- FOOTER ---
 f = configData.get("footer", {})
 p_html = "".join([f'<span style="font-size: 0.6rem; letter-spacing: 2px;">{p}</span>' for p in f.get("partners", [])])
