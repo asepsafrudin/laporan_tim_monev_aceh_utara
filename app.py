@@ -74,15 +74,15 @@ def load_assets():
     st.markdown(f"""
 <div class="nav-bar">
 <div class="nav-logo" style="display: flex; align-items: center; gap: 15px;">
-<img src="data:image/png;base64,{{img_kemendagri}}" style="height: 45px; margin-bottom: 0;">
+<img src="data:image/png;base64,{img_kemendagri}" style="height: 45px; margin-bottom: 0;">
 <div>
-<div style="line-height: 1;">MONEV ACEH UTARA</div>
-<div style="font-size: 0.7rem; font-weight: 400; opacity: 0.7; letter-spacing: 1px; margin-top: 4px; font-family: 'IBM Plex Sans', sans-serif;">DITJEN BINA BANGDA</div>
+<div style="font-size: 0.9rem; font-weight: 700; line-height: 1.2;">Kementerian Dalam Negeri</div>
+<div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8; letter-spacing: 0.5px; margin-top: 2px; font-family: 'IBM Plex Sans', sans-serif;">Direktorat Jenderal Bina Pembangunan Daerah</div>
 </div>
 </div>
 <div style="display: flex; align-items: center; gap: 20px;">
-<div style="font-size: 0.7rem; color: #3b82f6; border: 1px solid #3b82f6; padding: 4px 10px; border-radius: 99px; font-weight: 700;">LIVE FEED: 2026</div>
-<img src="data:image/png;base64,{{img_berakhlak}}" style="height: 40px; margin-bottom: 0;">
+<div style="font-size: 0.6rem; color: #3b82f6; border: 1px solid #3b82f6; padding: 4px 10px; border-radius: 99px; font-weight: 700; letter-spacing: 1px;">LIVE FEED: 2026</div>
+<img src="data:image/png;base64,{img_berakhlak}" style="height: 40px; margin-bottom: 0;">
 </div>
 </div>
 """, unsafe_allow_html=True)
