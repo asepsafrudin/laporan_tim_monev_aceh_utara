@@ -1,8 +1,13 @@
 {
     "hero": {
         "badge": "INTERNAL GOV ACCESS ONLY",
-        "title": "Rekonsiliasi Pemulihan <br/> Aceh Utara",
-        "subtitle": "Monitoring komprehensif pascabencana untuk optimalisasi alokasi bantuan dan percepatan pembangunan infrastruktur strategis daerah."
+        "title": "Laporan Monitoring dan Evaluasi Percepatan Rehabilitasi Pascabencana Alam",
+        "subtitle": "Provinsi Aceh - Kabupaten Aceh Utara: Investigasi Komprehensif Status Pemulihan dan Identifikasi Urgensi Tindakan",
+        "details": {
+            "dasar_hukum": "Kepmendagri No. 300.5.6-081/KEP/BANGDA/2026",
+            "periode": "10 - 14 Februari 2026",
+            "wilayah": "7 Kecamatan Terdampak"
+        }
     },
     "summary_metrics": [
         {
