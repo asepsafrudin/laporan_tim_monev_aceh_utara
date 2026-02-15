@@ -73,24 +73,23 @@ h = configData.get("hero", {})
 details = h.get("details", {})
 st.markdown(f"""
 <section class="hero" style="text-align: center; padding: 6rem 5% 4rem;">
-    <div style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 6px 16px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; display: inline-block; margin-bottom: 2rem;">{h.get('badge', 'INTERNAL ACCESS')}</div>
-    <h1 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem;">{h.get('title', 'Laporan Monev')}</h1>
-    <p style="font-size: 1.25rem; color: #94a3b8; max-width: 900px; margin: 0 auto 3rem;">{h.get('subtitle', '')}</p>
-    
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 4rem auto 0; padding: 2rem; background: rgba(30, 41, 59, 0.5); border: 1px solid var(--border); border-radius: 20px;">
-        <div>
-            <div style="font-size: 0.7rem; font-weight: 800; color: #3b82f6; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Dasar Hukum</div>
-            <div style="font-size: 0.95rem; color: white; font-weight: 600;">{details.get('dasar_hukum', '-')}</div>
-        </div>
-        <div>
-            <div style="font-size: 0.7rem; font-weight: 800; color: #3b82f6; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Periode Pelaksanaan</div>
-            <div style="font-size: 0.95rem; color: white; font-weight: 600;">{details.get('periode', '-')}</div>
-        </div>
-        <div>
-            <div style="font-size: 0.7rem; font-weight: 800; color: #3b82f6; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Wilayah Fokus</div>
-            <div style="font-size: 0.95rem; color: white; font-weight: 600;">{details.get('wilayah', '-')}</div>
-        </div>
-    </div>
+<div style="background: rgba(59, 130, 246, 0.1); color: #3b82f6; padding: 6px 16px; border-radius: 99px; font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; display: inline-block; margin-bottom: 2rem;">{h.get('badge', 'INTERNAL ACCESS')}</div>
+<h1 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem;">{h.get('title', 'Laporan Monev')}</h1>
+<p style="font-size: 1.25rem; color: #94a3b8; max-width: 900px; margin: 0 auto 3rem;">{h.get('subtitle', '')}</p>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 4rem auto 0; padding: 2rem; background: rgba(30, 41, 59, 0.5); border: 1px solid var(--border); border-radius: 20px;">
+<div>
+<div style="font-size: 0.7rem; font-weight: 800; color: #3b82f6; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Dasar Hukum</div>
+<div style="font-size: 0.95rem; color: white; font-weight: 600;">{details.get('dasar_hukum', '-')}</div>
+</div>
+<div>
+<div style="font-size: 0.7rem; font-weight: 800; color: #3b82f6; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Periode Pelaksanaan</div>
+<div style="font-size: 0.95rem; color: white; font-weight: 600;">{details.get('periode', '-')}</div>
+</div>
+<div>
+<div style="font-size: 0.7rem; font-weight: 800; color: #3b82f6; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.5rem;">Wilayah Fokus</div>
+<div style="font-size: 0.95rem; color: white; font-weight: 600;">{details.get('wilayah', '-')}</div>
+</div>
+</div>
 </section>
 """, unsafe_allow_html=True)
 
