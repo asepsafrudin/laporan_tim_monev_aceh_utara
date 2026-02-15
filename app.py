@@ -10,7 +10,7 @@ DATA_DIR = os.path.join(BASE_DIR, "data")
 METADATA_PATH = os.path.join(DATA_DIR, "metadata_report_final.json")
 STYLE_PATH = os.path.join(BASE_DIR, "style.css")
 
-@st.cache_data
+@st.cache_data(ttl=60)
 def load_json_data(filename):
     path = os.path.join(DATA_DIR, filename)
     if os.path.exists(path):
