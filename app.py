@@ -7,7 +7,7 @@ from PIL import Image, ImageOps
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 # Target metadata is in a sibling folder
-METADATA_PATH = os.path.join(os.path.dirname(BASE_DIR), "verification report system", "metadata_report_final.json")
+METADATA_PATH = os.path.join(DATA_DIR, "metadata_report_final.json")
 STYLE_PATH = os.path.join(BASE_DIR, "style.css")
 
 @st.cache_data
