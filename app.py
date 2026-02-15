@@ -61,8 +61,18 @@ def load_assets():
     # Injected Navigation Bar
     st.markdown("""
     <div class="nav-bar">
-        <div class="nav-logo">📋 MONEV ACEH UTARA</div>
-        <div style="font-size: 0.7rem; color: #3b82f6; border: 1px solid #3b82f6; padding: 4px 10px; border-radius: 99px; font-weight: 700;">LIVE FEED: 2026</div>
+        <div class="nav-logo" style="display: flex; align-items: center; gap: 15px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Logo_of_the_Ministry_of_Home_Affairs_of_the_Republic_of_Indonesia.svg" style="height: 45px; margin-bottom: 0;">
+            <div>
+                <div style="line-height: 1;">MONEV ACEH UTARA</div>
+                <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.7; letter-spacing: 1px; margin-top: 4px; font-family: 'IBM Plex Sans', sans-serif;">DITJEN BINA BANGDA</div>
+            </div>
+        </div>
+        
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <div style="font-size: 0.7rem; color: #3b82f6; border: 1px solid #3b82f6; padding: 4px 10px; border-radius: 99px; font-weight: 700;">LIVE FEED: 2026</div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Logo_BerAKHLAK.svg" style="height: 40px; margin-bottom: 0;">
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -203,7 +213,7 @@ with st.container():
                     <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: 2.5rem 2rem; height: 320px; display: flex; flex-direction: column; transition: 0.3s; margin-bottom: 20px;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
                              <span style="background: {'#ef4444' if d['priority'] == 'KRITIS' else '#f59e0b'}; color: white; padding: 4px 12px; border-radius: 6px; font-size: 0.7rem; font-weight: 800;">{d['priority']}</span>
-                             <span style="font-size: 1.5rem;">📍</span>
+                             <span style="font-size: 1.5rem;">&#128205;</span>
                         </div>
                         <h4 style="font-family: 'Crimson Pro', serif; font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 0.75rem;">{d['title']}</h4>
                         <p style="color: #64748b; font-size: 0.9rem; line-height: 1.5;">{d['subtitle']}</p>
