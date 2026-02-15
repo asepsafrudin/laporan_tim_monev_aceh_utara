@@ -357,7 +357,8 @@ indicatorData = {
 
 verifikasiData = {
     'sawang-pasar': {
-        'title': 'Kec. Sawang - Pasar Krueng Haji & Riseh Teungoh',
+        'title': 'Pasar Krueng Haji & Riseh Teungoh',
+        'kecamatan': 'Sawang',
         'status': 'LUMPUH TOTAL / HILANG',
         'content': """
                     <div style="background: rgba(196, 30, 58, 0.1); padding: 2rem; border-radius: 12px; border-left: 5px solid var(--accent-red); margin-bottom: 2rem;">
@@ -419,12 +420,13 @@ verifikasiData = {
                 """
     },
     'sawang-infrastruktur': {
-        'title': 'Kec. Sawang - Infrastruktur & Lahan Pertanian',
+        'title': 'Infrastruktur & Lahan Pertanian',
+        'kecamatan': 'Sawang',
         'status': 'HILANG / PUTUS',
         'content': """
                     <div style="background: rgba(196, 30, 58, 0.1); padding: 2rem; border-radius: 12px; border-left: 5px solid var(--accent-red); margin-bottom: 2rem;">
                         <div style="display: flex; align-items: center; gap: 1rem;">
-                            <span style="font-size: 3rem;">🌉</span>
+                            <span style="font-size: 3rem;">Bridge 🌉</span>
                             <div>
                                 <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-red);">STATUS: HILANG / PUTUS</div>
                                 <div style="color: var(--text-secondary); font-size: 1rem;">Infrastruktur Transportasi & Pertanian</div>

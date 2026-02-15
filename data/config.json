@@ -1,0 +1,35 @@
+{
+    "hero": {
+        "badge": "INTERNAL GOV ACCESS ONLY",
+        "title": "Rekonsiliasi Pemulihan <br/> Aceh Utara",
+        "subtitle": "Monitoring komprehensif pascabencana untuk optimalisasi alokasi bantuan dan percepatan pembangunan infrastruktur strategis daerah."
+    },
+    "summary_metrics": [
+        {
+            "val": "287",
+            "label": "Pusat Layanan"
+        },
+        {
+            "val": "11",
+            "label": "Faskes Rusak"
+        },
+        {
+            "val": "104.4",
+            "label": "Akses Terputus (KM)"
+        },
+        {
+            "val": "89%",
+            "label": "Tingkat Urgensi",
+            "color": "#ef4444"
+        }
+    ],
+    "footer": {
+        "title": "Sistem Informasi Pemulihan Pasca Bencana",
+        "powered_by": "Powered by Digital Aceh Utara Research Team | 2026",
+        "partners": [
+            "BNPB",
+            "KEMENDAGRI",
+            "PEMKAB ACEH UTARA"
+        ]
+    }
+}

@@ -1,30 +1,69 @@
 import { indicatorData, verifikasiData, kecamatanData } from './data.js';
 
-// Search functionality for kecamatan cards
-const searchInput = document.getElementById('kecamatan-search');
-if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const cards = document.querySelectorAll('.kecamatan-card');
+// --- Initialization ---
+document.addEventListener('DOMContentLoaded', () => {
+    initHeaderScroll();
+    initScrollReveal();
+    renderKecamatanCards();
+    initCardEvents();
+    initSearch();
+    initModalClosing();
+    handleActiveNav();
+    initBackToTop();
+});
 
-        cards.forEach(card => {
-            const text = card.textContent.toLowerCase();
-            if (text.includes(searchTerm)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
+// --- Back to Top ---
+function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+    btn.onclick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+}
+
+// --- Header Scroll Effect ---
+function initHeaderScroll() {
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     });
 }
 
-// Modal functions
-function openModal(indicator) {
+// --- Scroll Reveal with Intersection Observer ---
+function initScrollReveal() {
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+}
+
+// --- Modal Functionality ---
+function openModal(id) {
     const modal = document.getElementById('indicator-modal');
     const modalTitle = document.getElementById('modal-title');
     const modalContent = document.getElementById('modal-content');
 
-    let data = indicatorData[indicator] || kecamatanData[indicator] || verifikasiData[indicator];
+    const data = indicatorData[id] || verifikasiData[id] || kecamatanData[id];
 
     if (data) {
         modalTitle.textContent = data.title;
@@ -34,109 +73,103 @@ function openModal(indicator) {
     }
 }
 
-function closeModal() {
-    const modal = document.getElementById('indicator-modal');
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-// Card Event Listeners
 function initCardEvents() {
-    // Indicators
-    document.querySelectorAll('.indicator-card').forEach(card => {
-        const indicator = card.getAttribute('data-indicator');
-        card.onclick = () => openModal(indicator);
-    });
+    document.addEventListener('click', (e) => {
+        const card = e.target.closest('.indicator-card, .verifikasi-card, .kecamatan-card');
+        if (!card) return;
 
-    // Kecamatan
-    document.querySelectorAll('.kecamatan-card').forEach(card => {
-        const kecamatan = card.getAttribute('data-kecamatan');
-        card.onclick = () => openModal(kecamatan);
-    });
+        const id = card.getAttribute('data-indicator') ||
+            card.getAttribute('data-verifikasi') ||
+            card.getAttribute('data-kecamatan');
 
-    // Verifikasi
-    document.querySelectorAll('.verifikasi-card').forEach(card => {
-        const verifikasi = card.getAttribute('data-verifikasi');
-        card.onclick = () => openModal(verifikasi);
+        if (id) openModal(id);
     });
 }
 
-initCardEvents();
+function initModalClosing() {
+    const modal = document.getElementById('indicator-modal');
+    const closeBtn = document.querySelector('.close-modal');
 
-// Close modal on outside click
-document.getElementById('indicator-modal').addEventListener('click', (e) => {
-    if (e.target.id === 'indicator-modal') closeModal();
-});
+    const closeModal = () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    };
 
-// Close modal on ESC key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
-});
+    if (closeBtn) closeBtn.onclick = closeModal;
 
-// Scroll reveal animation
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+    window.onclick = (e) => {
+        if (e.target === modal) closeModal();
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+}
+
+// --- Kecamatan Module ---
+function renderKecamatanCards(filter = '') {
+    const grid = document.getElementById('kecamatanGrid');
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    Object.keys(kecamatanData).forEach(key => {
+        const item = kecamatanData[key];
+        if (item.title.toLowerCase().includes(filter.toLowerCase())) {
+            const card = document.createElement('div');
+            card.className = 'kecamatan-card scroll-reveal';
+            card.setAttribute('data-kecamatan', key);
+
+            const priorityClass = item.priority === 'KRITIS' ? 'badge-red' : 'badge-amber';
+
+            card.innerHTML = `
+                <div style="padding: 2.5rem; text-align: left;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+                        <span class="object-badge ${priorityClass}">${item.priority}</span>
+                        <span style="font-size: 1.5rem;">📍</span>
+                    </div>
+                    <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 0.75rem;">${item.title}</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">${item.subtitle}</p>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); color: var(--primary-blue); font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem;">
+                        LIHAT TEMUAN LENGKAP ➔
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+
+            // Re-trigger reveal check for new cards
+            setTimeout(() => card.classList.add('active'), 10);
         }
     });
-}, observerOptions);
+}
 
-document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+function initSearch() {
+    const searchInput = document.getElementById('kecamatanSearch');
+    if (searchInput) {
+        searchInput.oninput = (e) => renderKecamatanCards(e.target.value);
+    }
+}
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
+// --- Navigation Active State ---
+function handleActiveNav() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(a => {
+            a.classList.remove('active');
+            if (current && a.getAttribute('href').includes(current)) {
+                a.classList.add('active');
+            }
+        });
     });
-});
-
-// Progress bar animation
-const progressObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.progress-fill').forEach(fill => {
-                const width = fill.style.width;
-                fill.style.width = '0';
-                setTimeout(() => fill.style.width = width, 100);
-            });
-            progressObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.3 });
-
-document.querySelectorAll('.progress-bars').forEach(el => progressObserver.observe(el));
-
-// Active Link on Scroll
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLink?.parentElement.classList.add('active');
-            navLink?.style.setProperty('color', 'var(--primary-blue)');
-        } else {
-            navLink?.parentElement.classList.remove('active');
-            navLink?.style.setProperty('color', 'var(--text-secondary)');
-        }
-    });
-});
-
+}
