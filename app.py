@@ -61,18 +61,17 @@ def load_assets():
     # Injected Navigation Bar
     st.markdown("""
 <div class="nav-bar">
-    <div class="nav-logo" style="display: flex; align-items: center; gap: 15px;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Logo_of_the_Ministry_of_Home_Affairs_of_the_Republic_of_Indonesia.svg/483px-Logo_of_the_Ministry_of_Home_Affairs_of_the_Republic_of_Indonesia.svg.png" style="height: 45px; margin-bottom: 0;">
-        <div>
-            <div style="line-height: 1;">MONEV ACEH UTARA</div>
-            <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.7; letter-spacing: 1px; margin-top: 4px; font-family: 'IBM Plex Sans', sans-serif;">DITJEN BINA BANGDA</div>
-        </div>
-    </div>
-    
-    <div style="display: flex; align-items: center; gap: 20px;">
-        <div style="font-size: 0.7rem; color: #3b82f6; border: 1px solid #3b82f6; padding: 4px 10px; border-radius: 99px; font-weight: 700;">LIVE FEED: 2026</div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Logo_BerAKHLAK.svg/512px-Logo_BerAKHLAK.svg.png" style="height: 40px; margin-bottom: 0;">
-    </div>
+<div class="nav-logo" style="display: flex; align-items: center; gap: 15px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Logo_of_the_Ministry_of_Home_Affairs_of_the_Republic_of_Indonesia.svg/483px-Logo_of_the_Ministry_of_Home_Affairs_of_the_Republic_of_Indonesia.svg.png" style="height: 45px; margin-bottom: 0;">
+<div>
+<div style="line-height: 1;">MONEV ACEH UTARA</div>
+<div style="font-size: 0.7rem; font-weight: 400; opacity: 0.7; letter-spacing: 1px; margin-top: 4px; font-family: 'IBM Plex Sans', sans-serif;">DITJEN BINA BANGDA</div>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 20px;">
+<div style="font-size: 0.7rem; color: #3b82f6; border: 1px solid #3b82f6; padding: 4px 10px; border-radius: 99px; font-weight: 700;">LIVE FEED: 2026</div>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Logo_BerAKHLAK.svg/512px-Logo_BerAKHLAK.svg.png" style="height: 40px; margin-bottom: 0;">
+</div>
 </div>
 """, unsafe_allow_html=True)
 
