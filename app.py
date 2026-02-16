@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import json
 import base64
+import re
 from PIL import Image, ImageOps
 
 # --- PATH CONFIGURATION ---
@@ -132,7 +133,25 @@ def show_modal(data):
     
     content = data['content']
     
-    # Check for image attachment
+    # Process [[img:path/to/image.ext]] tags
+    def replace_img_tag(match):
+        img_rel_path = match.group(1).strip()
+        full_path = os.path.join(BASE_DIR, img_rel_path)
+        b64_img = get_img_as_base64(full_path)
+        if b64_img:
+            # Determine mime type based on extension
+            ext = os.path.splitext(full_path)[1].lower()
+            mime = "image/png" if ext == ".png" else "image/jpeg"
+            return f"""
+            <div style="margin: 1rem 0; border-radius: 12px; overflow: hidden; border: 1px solid #334155;">
+                <img src="data:{mime};base64,{b64_img}" style="width: 100%; display: block;" alt="Dokumentasi">
+            </div>
+            """
+        return ""
+
+    content = re.sub(r'\[\[img:(.*?)\]\]', replace_img_tag, content)
+    
+    # Check for legacy single image attachment
     if 'image' in data:
         img_path = os.path.join(BASE_DIR, data['image'])
         b64_img = get_img_as_base64(img_path)
