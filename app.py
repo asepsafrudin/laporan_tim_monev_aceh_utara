@@ -45,6 +45,15 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+
+def get_img_as_base64(file_path):
+    try:
+        with open(file_path, "rb") as f:
+            data = f.read()
+        return base64.b64encode(data).decode()
+    except:
+        return ""
+
 # --- LOAD EXTERNAL ASSETS ---
 def load_assets():
     # Load Google Fonts
@@ -58,14 +67,6 @@ def load_assets():
     if os.path.exists(STYLE_PATH):
         with open(STYLE_PATH, "r") as f:
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-    def get_img_as_base64(file_path):
-        try:
-            with open(file_path, "rb") as f:
-                data = f.read()
-            return base64.b64encode(data).decode()
-        except:
-            return ""
 
     img_kemendagri = get_img_as_base64(os.path.join(BASE_DIR, "images/kemendagri.png"))
     img_berakhlak = get_img_as_base64(os.path.join(BASE_DIR, "images/berakhlak.png"))
@@ -128,7 +129,24 @@ st.markdown(f"""<div class="metrics-grid">{m_html}</div>""", unsafe_allow_html=T
 def show_modal(data):
     st.markdown(f"# {data['title']}")
     st.markdown("<hr style='border: 1px solid rgba(255,255,255,0.1)'>", unsafe_allow_html=True)
-    st.markdown(data['content'], unsafe_allow_html=True)
+    
+    content = data['content']
+    
+    # Check for image attachment
+    if 'image' in data:
+        img_path = os.path.join(BASE_DIR, data['image'])
+        b64_img = get_img_as_base64(img_path)
+        if b64_img:
+            content += f"""
+            <div style="margin-top: 1.5rem; border-radius: 12px; overflow: hidden; border: 1px solid #334155;">
+                <img src="data:image/jpeg;base64,{b64_img}" style="width: 100%; display: block;">
+                <div style="background: #1e293b; color: #94a3b8; font-size: 0.8rem; padding: 0.5rem 1rem; text-align: center;">
+                    Dokumentasi Lapangan: {data['title']}
+                </div>
+            </div>
+            """
+            
+    st.markdown(content, unsafe_allow_html=True)
     if st.button("Selesai & Tutup"):
         st.rerun()
 
