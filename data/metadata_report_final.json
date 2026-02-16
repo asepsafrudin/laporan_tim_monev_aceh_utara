@@ -15423,5 +15423,225 @@
             "manual_name": "",
             "reason": "No name match found in R3P candidates"
         }
+    },
+    {
+        "file_path": "images/foto_asep/sps ar rahmah.jpg",
+        "filename": "sps ar rahmah.jpg",
+        "timestamp": "2026:02:16 13:30:00",
+        "gps": {
+            "latitude": 5.116667,
+            "longitude": 97.35
+        },
+        "kecamatan": "Tanah Pasir",
+        "kabupaten": "Aceh Utara",
+        "province": "Aceh",
+        "nearby_objects": [],
+        "manual_object_name": "SPS Ar Rahmah",
+        "_ui_id": 9001,
+        "recon_status": "matched",
+        "recon_data": {
+            "matched_r3p_item": "SPS Ar Rahmah",
+            "confidence": 1.0
+        }
+    },
+    {
+        "file_path": "images/foto_asep/sps_ar-rahmah.jpg",
+        "filename": "sps_ar-rahmah.jpg",
+        "timestamp": "2026:02:16 13:30:00",
+        "gps": {
+            "latitude": 5.116667,
+            "longitude": 97.35
+        },
+        "kecamatan": "Tanah Pasir",
+        "kabupaten": "Aceh Utara",
+        "province": "Aceh",
+        "nearby_objects": [],
+        "manual_object_name": "SPS Ar Rahmah (Detail)",
+        "_ui_id": 9002,
+        "recon_status": "matched",
+        "recon_data": {
+            "matched_r3p_item": "SPS Ar Rahmah",
+            "confidence": 1.0
+        }
+    },
+    {
+        "file_path": "images/foto_asep/sps_ar_arrahmah.jpg",
+        "filename": "sps_ar_arrahmah.jpg",
+        "timestamp": "2026:02:16 13:30:00",
+        "gps": {
+            "latitude": 5.116667,
+            "longitude": 97.35
+        },
+        "kecamatan": "Tanah Pasir",
+        "kabupaten": "Aceh Utara",
+        "province": "Aceh",
+        "nearby_objects": [],
+        "manual_object_name": "SPS Ar Rahmah (Interior)",
+        "_ui_id": 9003,
+        "recon_status": "matched",
+        "recon_data": {
+            "matched_r3p_item": "SPS Ar Rahmah",
+            "confidence": 1.0
+        }
+    },
+    {
+        "file_path": "images/foto_asep/tanah pasir.jpg",
+        "filename": "tanah pasir.jpg",
+        "timestamp": "2026:02:16 13:30:00",
+        "gps": {
+            "latitude": 5.116667,
+            "longitude": 97.35
+        },
+        "kecamatan": "Tanah Pasir",
+        "kabupaten": "Aceh Utara",
+        "province": "Aceh",
+        "nearby_objects": [],
+        "manual_object_name": "Kecamatan Tanah Pasir",
+        "_ui_id": 9004,
+        "recon_status": "matched",
+        "recon_data": {
+            "matched_r3p_item": "Kecamatan Tanah Pasir",
+            "confidence": 1.0
+        }
+    },
+    {
+        "file_path": "images/foto_asep/tanah pasir3.jpg",
+        "filename": "tanah pasir3.jpg",
+        "timestamp": "2026:02:16 13:30:00",
+        "gps": {
+            "latitude": 5.116667,
+            "longitude": 97.35
+        },
+        "kecamatan": "Tanah Pasir",
+        "kabupaten": "Aceh Utara",
+        "province": "Aceh",
+        "nearby_objects": [],
+        "manual_object_name": "Kecamatan Tanah Pasir (Lingkungan)",
+        "_ui_id": 9005,
+        "recon_status": "matched",
+        "recon_data": {
+            "matched_r3p_item": "Kecamatan Tanah Pasir",
+            "confidence": 1.0
+        }
+    },
+    {
+        "file_path": "images/foto_asep/tanah pasir4.jpg",
+        "filename": "tanah pasir4.jpg",
+        "timestamp": "2026:02:16 13:30:00",
+        "gps": {
+            "latitude": 5.116667,
+            "longitude": 97.35
+        },
+        "kecamatan": "Tanah Pasir",
+        "kabupaten": "Aceh Utara",
+        "province": "Aceh",
+        "nearby_objects": [],
+        "manual_object_name": "Kecamatan Tanah Pasir (Detail)",
+        "_ui_id": 9006,
+        "recon_status": "matched",
+        "recon_data": {
+            "matched_r3p_item": "Kecamatan Tanah Pasir",
+            "confidence": 1.0
+        }
+    },
+    {
+        "file_path": "images/foto_asep/tanah pasir5.jpg",
+        "filename": "tanah pasir5.jpg",
+        "timestamp": "2026:02:16 13:30:00",
+        "gps": {
+            "latitude": 5.116667,
+            "longitude": 97.35
+        },
+        "kecamatan": "Tanah Pasir",
+        "kabupaten": "Aceh Utara",
+        "province": "Aceh",
+        "nearby_objects": [],
+        "manual_object_name": "Kecamatan Tanah Pasir (5)",
+        "_ui_id": 9007,
+        "recon_status": "matched",
+        "recon_data": {
+            "matched_r3p_item": "Kecamatan Tanah Pasir",
+            "confidence": 1.0
+        }
+    },
+    {
+        "file_path": "images/foto_asep/tanah pasir6.jpg",
+        "filename": "tanah pasir6.jpg",
+        "timestamp": "2026:02:16 13:30:00",
+        "gps": {
+            "latitude": 5.116667,
+            "longitude": 97.35
+        },
+        "kecamatan": "Tanah Pasir",
+        "kabupaten": "Aceh Utara",
+        "province": "Aceh",
+        "nearby_objects": [],
+        "manual_object_name": "Kecamatan Tanah Pasir (6)",
+        "_ui_id": 9008,
+        "recon_status": "matched",
+        "recon_data": {
+            "matched_r3p_item": "Kecamatan Tanah Pasir",
+            "confidence": 1.0
+        }
+    },
+    {
+        "file_path": "images/foto_asep/tanah pasir7.jpg",
+        "filename": "tanah pasir7.jpg",
+        "timestamp": "2026:02:16 13:30:00",
+        "gps": {
+            "latitude": 5.116667,
+            "longitude": 97.35
+        },
+        "kecamatan": "Tanah Pasir",
+        "kabupaten": "Aceh Utara",
+        "province": "Aceh",
+        "nearby_objects": [],
+        "manual_object_name": "Kecamatan Tanah Pasir (7)",
+        "_ui_id": 9009,
+        "recon_status": "matched",
+        "recon_data": {
+            "matched_r3p_item": "Kecamatan Tanah Pasir",
+            "confidence": 1.0
+        }
+    },
+    {
+        "file_path": "images/foto_asep/tanah pasir8_sps ar-rahmah.jpg",
+        "filename": "tanah pasir8_sps ar-rahmah.jpg",
+        "timestamp": "2026:02:16 13:30:00",
+        "gps": {
+            "latitude": 5.116667,
+            "longitude": 97.35
+        },
+        "kecamatan": "Tanah Pasir",
+        "kabupaten": "Aceh Utara",
+        "province": "Aceh",
+        "nearby_objects": [],
+        "manual_object_name": "SPS Ar Rahmah (Main Entrance)",
+        "_ui_id": 9010,
+        "recon_status": "matched",
+        "recon_data": {
+            "matched_r3p_item": "SPS Ar Rahmah",
+            "confidence": 1.0
+        }
+    },
+    {
+        "file_path": "images/foto_asep/tanah_pasir1.jpg",
+        "filename": "tanah_pasir1.jpg",
+        "timestamp": "2026:02:16 13:30:00",
+        "gps": {
+            "latitude": 5.116667,
+            "longitude": 97.35
+        },
+        "kecamatan": "Tanah Pasir",
+        "kabupaten": "Aceh Utara",
+        "province": "Aceh",
+        "nearby_objects": [],
+        "manual_object_name": "Kecamatan Tanah Pasir (1)",
+        "_ui_id": 9011,
+        "recon_status": "matched",
+        "recon_data": {
+            "matched_r3p_item": "Kecamatan Tanah Pasir",
+            "confidence": 1.0
+        }
     }
 ]
